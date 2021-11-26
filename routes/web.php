@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controller\MailController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/index', [App\Http\Controllers\IndexController::class, 'index']);
+Route::get('/', [App\Http\Controllers\IndexController::class, 'index']);
 Route::get('/single/{id}', [App\Http\Controllers\IndexController::class, 'single']);
 Route::get('/VenteForm', [App\Http\Controllers\VenteController::class, 'VenteForm']);
 Route::post('/VenteForm', [App\Http\Controllers\VenteController::class, 'store']);
@@ -27,6 +28,10 @@ Route::get('/admin/ProduitClient', [App\Http\Controllers\AdminController::class,
 Route::get('/admin/Produit', [App\Http\Controllers\AdminController::class, 'Produit']);
 Route::get('/admin/home', [App\Http\Controllers\AdminController::class, 'home']);
 Route::delete('/admin/{id}', [App\Http\Controllers\AdminController::class, 'delete']);
+
+
+
+Route::get('/send-email', [App\Http\Controllers\MailController::class, 'sendEmail']);
 
 Auth::routes();
 

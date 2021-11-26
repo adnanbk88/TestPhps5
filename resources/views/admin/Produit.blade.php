@@ -97,7 +97,7 @@
                         @method('DELETE')
                         <button style="background-color: red; border-radius: 30px; margin-left:-4%" type="button" class="btn delete ">Supprimer</button>
                       </form>
-                      <a href="href="{{ url('admin/'.$produit->id.'/edite') }}">
+                      <a href="{{ url('admin/'.$produit->id.'/edite') }}">
                         <button style="background-color: green; border-radius: 30px; " class="btn ">Edit</button>
                       </a>
             </th>

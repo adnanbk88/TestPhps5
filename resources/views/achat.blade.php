@@ -70,34 +70,9 @@
       <div class="top-bar hidden-xs">
         <div class="container">
           <div class="top-bar-links flex-parent">
-            <ul class="top-bar-currency-language">
-              <li>
-                Currency: <a href="#">USD<i class="fa fa-angle-down"></i></a>
-                <div class="currency-dropdown">
-                  <ul>
-                    <li><a href="#">USD</a></li>
-                    <li><a href="#">EUR</a></li>
-                  </ul>
-                </div>
-              </li>
-              <li class="language">
-                Language: <a href="#">ENG<i class="fa fa-angle-down"></i></a>
-                <div class="language-dropdown">
-                  <ul>
-                    <li><a href="#">English</a></li>
-                    <li><a href="#">Spanish</a></li>
-                    <li><a href="#">German</a></li>
-                    <li><a href="#">Chinese</a></li>
-                  </ul>
-                </div>
-              </li>
-            </ul>
+         
 
-            <ul class="top-bar-acc">
-              <li class="top-bar-link"><a href="#">My Wishlist</a></li>
-              <li class="top-bar-link"><a href="#">Newsletter</a></li>
-              <li class="top-bar-link"><a href="#">Login</a></li>                 
-            </ul>
+           
 
           </div>
         </div>
@@ -114,16 +89,11 @@
                 <div class="logo-container">
                   <div class="logo-wrap">
                     <a href="index.html">
-                      <img class="logo-dark" src="img/logo_dark.png" alt="logo">
+                      <img class="logo-dark" src="img/ANM.png" alt="logo">
                     </a>
                   </div>
                 </div>
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
-                  <span class="sr-only">Toggle navigation</span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                </button>
+               
                 <!-- Mobile cart -->
                 <div class="nav-cart mobile-cart hidden-lg hidden-md">
                   <div class="nav-cart-outer">
@@ -139,7 +109,7 @@
               <div class="nav-wrap flex-child">
                 <div class="collapse navbar-collapse text-center" id="navbar-collapse">
                   
-                  <ul class="nav navbar-nav">
+                  {{-- <ul class="nav navbar-nav">
 
                     <li class="dropdown">
                       <a href="#">Home</a>
@@ -210,7 +180,7 @@
                       </form>
                     </li>
 
-                  </ul> <!-- end menu -->
+                  </ul> <!-- end menu --> --}}
                 </div> <!-- end collapse -->
               </div> <!-- end col -->
 
@@ -239,46 +209,16 @@
                               <img src="img/shop/shop_item_1.jpg" alt="">
                             </a>
                           </div>
-                          <div class="nav-cart-title">
-                            <a href="#">
-                              Ladies Bag
-                            </a>
-                            <div class="nav-cart-price">
-                              <span>1 x</span>
-                              <span>1250.00</span>
-                            </div>
-                          </div>
+                        
                           <div class="nav-cart-remove">
                             <a href="#" class="remove"><i class="ui-close"></i></a>
                           </div>
                         </div>
 
-                        <div class="nav-cart-item clearfix">
-                          <div class="nav-cart-img">
-                            <a href="#">
-                              <img src="img/shop/shop_item_2.jpg" alt="">
-                            </a>
-                          </div>
-                          <div class="nav-cart-title">
-                            <a href="#">
-                              Sequin Suit longer title
-                            </a>
-                            <div class="nav-cart-price">
-                              <span>1 x</span>
-                              <span>1250.00</span>
-                            </div>
-                          </div>
-                          <div class="nav-cart-remove">
-                            <a href="#" class="remove"><i class="ui-close"></i></a>
-                          </div>
-                        </div>
-
+                      
                       </div> <!-- end cart items -->
 
-                      <div class="nav-cart-summary">
-                        <span>Cart Subtotal</span>
-                        <span class="total-price">$1799.00</span>
-                      </div>
+                   
 
                       <div class="nav-cart-actions mt-20">
                         <a href="shop-cart.html" class="btn btn-md btn-dark"><span>View Cart</span></a>
@@ -349,7 +289,7 @@
                   <div class="card">
                     <img class="card-img" src="{{asset('/img/pic3.png')}}" alt="Maldives" />
                     <div class="card-content">
-                      <h1 class="card-header">Reçoie d'argent en 24h</h1>
+                      <h1 class="card-header">Payer à la livraison </h1>
                       <p class="card-text">
                         The Maldives are known for their
                         <strong>natural environment</strong> including the blue ocean,
@@ -362,134 +302,90 @@
             </div>
 
         </section>
-        <section class="section-wrap pt-0">
-            <div class="container">
+         <!-- Tabs/Slider Products -->
+         <hr>
+      <section class="section-wrap pt-0">
+        <div class="container-fluid">
 
-            <div class="container-fluid">
-    
-              <!-- Tabs -->
-              <div class="text-center">
-                <div class="tabs product-tabs">
-                
-                  <ul class="nav nav-tabs">                                
-                    <li class="active">
-                      <a href="#featured" data-toggle="tab">Featured</a>
-                    </li>                                
-                  </ul>
-                
+          <!-- Tabs -->
+          <div class="text-center">
+            <div class="tabs product-tabs">
+            
+              <ul class="nav nav-tabs">                                
+                <li class="active">
+                  <a href="#featured" data-toggle="tab">Featured</a>
+                </li>                                
+                                              
+              </ul>
+            
+            </div>
+          </div>
+
+
+        <!-- Tab Content -->
+        <div class="tab-content tabs-slider-content">
+
+          <!-- Featured -->
+          <div class="tab-pane fade in active" id="featured">
+
+            <div id="owl-shop-items-slider-1" class="owl-carousel owl-theme">
+              @foreach ($produits as $produit) 
+
+              <div class="product">
+                <div class="product-item hover-trigger">
+                  <div class="product-img">
+                    <a href="shop-single.html">
+                      <img src="{{asset('/storage/uploads/'.$produit->Image)}}" alt="">
+                    </a>
+                  
+                    <div class="hover-2">                    
+                      <div class="product-actions">
+                        <a href="#" class="product-add-to-wishlist">
+                          <i class="fa fa-heart"></i>
+                        </a>
+                      </div>                        
+                    </div>
+                    <a href="{{url('/single/'.$produit->id)}}" class="product-quickview">Acheter maintenant</a>
+                  </div>
+                  <div class="product-details">                      
+                    <h3 class="product-title">
+                      <a href=""">{{$produit->Model}}</a>
+                    </h3>
+                   
+                  </div>
+                  <span class="price">
+                   
+                    <ins>
+                      <span class="amount">{{$produit->Prix}} <b>MAD</b> </span>
+                    </ins>
+                  </span>
                 </div>
               </div>
-    
-    
-            <!-- Tab Content -->
-            <div class="tab-content tabs-slider-content">
-    
-              <!-- Featured -->
-              <div class="tab-pane fade in active" id="featured">
-    
-                <div id="owl-shop-items-slider-1" class="owl-carousel owl-theme">
-    
-                  <div class="product">
-                    <div class="product-item hover-trigger">
-                      <div class="product-img">
-                        <a href="shop-single.html">
-                          <img src="img/shop/collection_5.jpg" alt="">
-                          <img src="img/shop/collection_5.jpg" alt="" class="back-img">
-                        </a>
-                        <div class="product-label">
-                          <span class="sale">sale</span>
-                        </div>
-                        <div class="hover-2">                    
-                          <div class="product-actions">
-                            <a href="#" class="product-add-to-wishlist">
-                            </a>
-                          </div>                        
-                        </div>
-                        <a href="#" class="product-quickview">Quick View</a>
-                      </div>
-                      <div class="product-details">                      
-                        
-                        <span class="category">
-                          <a href="catalogue-grid.html">Iphone</a>
-                        </span>
-                      </div>
-                      <span class="price">
-                        
-                        <ins>
-                          <span class="amount">$399.99</span>
-                        </ins>
-                      </span>
-                    </div>
-                  </div>
-                  <div class="product">
-                    <div class="product-item hover-trigger">
-                      <div class="product-img">
-                        <a href="shop-single.html">
-                          <img src="img/shop/collection_5.jpg" alt="">
-                          <img src="img/shop/collection_5.jpg" alt="" class="back-img">
-                        </a>
-                        <div class="product-label">
-                          <span class="sale">sale</span>
-                        </div>
-                        <div class="hover-2">                    
-                          <div class="product-actions">
-                            <a href="#" class="product-add-to-wishlist">
-                            </a>
-                          </div>                        
-                        </div>
-                        <a href="#" class="product-quickview">Quick View</a>
-                      </div>
-                      <div class="product-details">                      
-                        
-                        <span class="category">
-                          <a href="catalogue-grid.html">Iphone</a>
-                        </span>
-                      </div>
-                      <span class="price">
-                        
-                        <ins>
-                          <span class="amount">$399.99</span>
-                        </ins>
-                      </span>
-                    </div>
-                  </div>
-                  <div class="product">
-                    <div class="product-item hover-trigger">
-                      <div class="product-img">
-                        <a href="shop-single.html">
-                          <img src="img/shop/collection_5.jpg" alt="">
-                          <img src="img/shop/collection_5.jpg" alt="" class="back-img">
-                        </a>
-                        <div class="product-label">
-                          <span class="sale">sale</span>
-                        </div>
-                        <div class="hover-2">                    
-                          <div class="product-actions">
-                            <a href="#" class="product-add-to-wishlist">
-                            </a>
-                          </div>                        
-                        </div>
-                        <a href="#" class="product-quickview">Quick View</a>
-                      </div>
-                      <div class="product-details">                      
-                        
-                        <span class="category">
-                          <a href="catalogue-grid.html">Iphone</a>
-                        </span>
-                      </div>
-                      <span class="price">
-                        
-                        <ins>
-                          <span class="amount">$399.99</span>
-                        </ins>
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div></div></div>
-            </div>
+              @endforeach
 
-        </section>
+              
+
+              
+
+             
+
+             
+
+             
+
+            </div> <!-- end slider -->
+
+          </div> <!-- end featured -->
+
+         
+
+        
+
+
+        </div>
+
+        </div>
+      </section> <!-- end tabs/slider products -->
          
       <!-- Footer Type-1 -->
       <footer class="footer footer-type-1">
@@ -497,10 +393,9 @@
           <div class="footer-widgets">
             <div class="row">
 
-              <div class="col-md-3 col-sm-12 col-xs-12">
+              <div class="col-md-2 col-sm-12 col-xs-12">
                 <div class="widget footer-about-us">
-                  <img src="img/logo_dark.png" alt="" class="logo">
-                  <p class="mb-30">Zenna Shop is a very slick and clean eCommerce template.</p>
+                  <img src="img/ANM.png" alt="" class="logo">
                   <div class="footer-socials">
                   
                   </div>
@@ -518,12 +413,12 @@
 
               <div class="col-md-2 col-sm-6 col-xs-12">
                 <div class="widget footer-links">
-                  <h5 class="widget-title bottom-line left-align grey">Account</h5>
+                  <h5 class="widget-title bottom-line left-align grey">Pages</h5>
                   <ul class="list-no-dividers">                  
-                    <li><a href="#">My account</a></li>
-                    <li><a href="#">Wishlist</a></li>
-                    <li><a href="#">Order history</a></li>
-                    <li><a href="#">Specials</a></li>
+                    <li><a href="#">Acheter</a></li>
+                    <li><a href="#">Vendre</a></li>
+                 
+                 
                   </ul>
                 </div>
               </div>
@@ -552,7 +447,7 @@
 
               <div class="col-sm-6 copyright sm-text-center">
                 <span>
-                  &copy; 2021  by A-N-M
+                  &copy; 2021  by A N M 
                 </span>
               </div>
 
@@ -568,7 +463,6 @@
           </div>
         </div> <!-- end bottom footer -->
       </footer> <!-- end footer -->
-
       <div id="back-to-top">
         <a href="#top"><i class="fa fa-angle-up"></i></a>
       </div>

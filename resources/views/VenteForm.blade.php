@@ -71,8 +71,34 @@
       <div class="top-bar hidden-xs">
         <div class="container">
           <div class="top-bar-links flex-parent">
-           
-            
+            <ul class="top-bar-currency-language">
+              <li>
+                Currency: <a href="#">USD<i class="fa fa-angle-down"></i></a>
+                <div class="currency-dropdown">
+                  <ul>
+                    <li><a href="#">USD</a></li>
+                    <li><a href="#">EUR</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li class="language">
+                Language: <a href="#">ENG<i class="fa fa-angle-down"></i></a>
+                <div class="language-dropdown">
+                  <ul>
+                    <li><a href="#">English</a></li>
+                    <li><a href="#">Spanish</a></li>
+                    <li><a href="#">German</a></li>
+                    <li><a href="#">Chinese</a></li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+
+            <ul class="top-bar-acc">
+              <li class="top-bar-link"><a href="#">My Wishlist</a></li>
+              <li class="top-bar-link"><a href="#">Newsletter</a></li>
+              <li class="top-bar-link"><a href="#">Login</a></li>                 
+            </ul>
 
           </div>
         </div>
@@ -94,6 +120,7 @@
                   </div>
                 </div>
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+                  <span class="sr-only">Toggle navigation</span>
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
@@ -103,6 +130,7 @@
                   <div class="nav-cart-outer">
                     <div class="nav-cart-inner">
                       <a href="#" class="nav-cart-icon">
+                        <span class="nav-cart-badge">2</span>
                       </a>
                     </div>
                   </div>
@@ -112,7 +140,7 @@
               <div class="nav-wrap flex-child">
                 <div class="collapse navbar-collapse text-center" id="navbar-collapse">
                   
-                  <ul class="nav navbar-nav">
+                  {{-- <ul class="nav navbar-nav">
 
                     <li class="dropdown">
                       <a href="#">Home</a>
@@ -183,7 +211,7 @@
                       </form>
                     </li>
 
-                  </ul> <!-- end menu -->
+                  </ul> <!-- end menu --> --}}
                 </div> <!-- end collapse -->
               </div> <!-- end col -->
 
@@ -212,46 +240,16 @@
                               <img src="img/shop/shop_item_1.jpg" alt="">
                             </a>
                           </div>
-                          <div class="nav-cart-title">
-                            <a href="#">
-                              Ladies Bag
-                            </a>
-                            <div class="nav-cart-price">
-                              <span>1 x</span>
-                              <span>1250.00</span>
-                            </div>
-                          </div>
+                        
                           <div class="nav-cart-remove">
                             <a href="#" class="remove"><i class="ui-close"></i></a>
                           </div>
                         </div>
 
-                        <div class="nav-cart-item clearfix">
-                          <div class="nav-cart-img">
-                            <a href="#">
-                              <img src="img/shop/shop_item_2.jpg" alt="">
-                            </a>
-                          </div>
-                          <div class="nav-cart-title">
-                            <a href="#">
-                              Sequin Suit longer title
-                            </a>
-                            <div class="nav-cart-price">
-                              <span>1 x</span>
-                              <span>1250.00</span>
-                            </div>
-                          </div>
-                          <div class="nav-cart-remove">
-                            <a href="#" class="remove"><i class="ui-close"></i></a>
-                          </div>
-                        </div>
-
+                      
                       </div> <!-- end cart items -->
 
-                      <div class="nav-cart-summary">
-                        <span>Cart Subtotal</span>
-                        <span class="total-price">$1799.00</span>
-                      </div>
+                   
 
                       <div class="nav-cart-actions mt-20">
                         <a href="shop-cart.html" class="btn btn-md btn-dark"><span>View Cart</span></a>
@@ -586,10 +584,9 @@ form .user-details .input-box{
           <div class="footer-widgets">
             <div class="row">
 
-              <div class="col-md-3 col-sm-12 col-xs-12">
+              <div class="col-md-2 col-sm-12 col-xs-12">
                 <div class="widget footer-about-us">
                   <img src="img/ANM.png" alt="" class="logo">
-                  <p class="mb-30">Zenna Shop is a very slick and clean eCommerce template.</p>
                   <div class="footer-socials">
                   
                   </div>
@@ -607,12 +604,12 @@ form .user-details .input-box{
 
               <div class="col-md-2 col-sm-6 col-xs-12">
                 <div class="widget footer-links">
-                  <h5 class="widget-title bottom-line left-align grey">Account</h5>
+                  <h5 class="widget-title bottom-line left-align grey">Pages</h5>
                   <ul class="list-no-dividers">                  
-                    <li><a href="#">My account</a></li>
-                    <li><a href="#">Wishlist</a></li>
-                    <li><a href="#">Order history</a></li>
-                    <li><a href="#">Specials</a></li>
+                    <li><a href="#">Acheter</a></li>
+                    <li><a href="#">Vendre</a></li>
+                 
+                 
                   </ul>
                 </div>
               </div>
@@ -641,7 +638,7 @@ form .user-details .input-box{
 
               <div class="col-sm-6 copyright sm-text-center">
                 <span>
-                  &copy; 2021  by A-N-M
+                  &copy; 2021  by A N M 
                 </span>
               </div>
 

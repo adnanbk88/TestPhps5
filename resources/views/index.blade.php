@@ -67,14 +67,66 @@
 
       <!-- Top Bar -->
       <div class="top-bar hidden-xs">
+        <div class="messagedefilant">
         <div class="container">
           <div class="top-bar-links flex-parent">
+              <div style="margin-top:43px" data-text="Voici un texte qui doit défiler horizontalement. Il peut etre encore plus long !---"><span>Voici un texte qui doit défiler horizontalement. Il peut etre encore plus long !---</span></div>
+            </div>
+             
            
                 </div>
-              </li>
-            </ul>
+             
 
-          
+          <style>
+          /* Texte défilant */
+.messagedefilant {
+  display: block;
+  margin: 1px auto;
+  padding: 0;
+  overflow: hidden;
+  position: relative;
+  width: 50%;
+  max-width: 640px;
+  height: 60px;
+}
+ 
+.messagedefilant div {
+  position: absolute;
+  min-width: 100%; /* au minimum la largeur du conteneur */
+}
+ 
+.messagedefilant div span, 
+.messagedefilant div:after {
+  position: relative;
+  display: inline-block;
+  font-size: 2rem;
+  white-space: nowrap;
+  top:0;
+}
+ 
+.messagedefilant div span {
+  animation: defilement 10s infinite linear;
+  background:;
+}
+ 
+.messagedefilant div:after {
+  position: absolute;
+  top:0; left:0;
+  content:attr(data-text);
+  animation: defilement2 10s infinite linear;
+  background: ;
+}
+ 
+@keyframes defilement {
+  0% { margin-left: 0; }
+  100% { margin-left: -100%; }
+}
+ 
+@keyframes defilement2 {
+  0% { margin-left: 100%; }
+  100% { margin-left: 0%; }
+}
+          </style>
 
           </div>
         </div>
@@ -121,58 +173,26 @@
                     <li class="dropdown">
                       <a href="#">Home</a>
                       <i class="fa fa-angle-down dropdown-trigger"></i>
-                      <ul class="dropdown-menu">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="index-2.html">Home 2</a></li>
-                        <li><a href="index-3.html">Home 3</a></li>
-                      </ul>
+                     
                     </li>
 
                     <li class="dropdown">
                       <a href="#">Pages</a>
                       <i class="fa fa-angle-down dropdown-trigger"></i>
                       <ul class="dropdown-menu">
-                        <li><a href="about-us.html">About Us</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                        <li><a href="faq.html">F.A.Q</a></li>
-                        <li><a href="404.html">404</a></li>
+                        
+                        <li><a href="{{url('achat')}}">Achat</a></li>
+                        <li><a href="{{url('VenteForm')}}">Vente</a></li>
                       </ul>
                     </li>
 
-                    <li class="dropdown">
-                      <a href="#">Blog</a>
-                      <i class="fa fa-angle-down dropdown-trigger"></i>
-                      <ul class="dropdown-menu">
-                        <li><a href="blog-standard.html">Standard</a></li>
-                        <li><a href="blog-single.html">Single Post</a></li>
-                      </ul>
-                    </li>
+                   
+
 
                     <li class="dropdown">
-                      <a href="#">Shop</a>
+                      <a href="#">Notre collection</a>
                       <i class="fa fa-angle-down dropdown-trigger"></i>
-                      <ul class="dropdown-menu megamenu-wide">
-                        <li>
-                          <div class="megamenu-wrap container">
-                            <div class="row">
-
-                      
-
-                             
-
-                            </div> 
-                          </div>
-                        </li>
-                      </ul>
-                    </li>
-
-                    <li class="dropdown">
-                      <a href="#">Elements</a>
-                      <i class="fa fa-angle-down dropdown-trigger"></i>
-                      <ul class="dropdown-menu">
-                        <li><a href="shortcodes.html">Shortcodes</a></li>
-                        <li><a href="typography.html">Typography</a></li>
-                      </ul>
+                     
                     </li> <!-- end elements -->
 
                   
@@ -180,7 +200,7 @@
                     <!-- Mobile search -->
                     <li id="mobile-search" class="hidden-lg hidden-md">
                       <form method="get" class="mobile-search">
-                        <input type="search" class="form-control" placeholder="Search...">
+                        <input type=".." class="form-control" placeholder="Search...">
                         <button type="submit" class="search-button">
                           <i class="fa fa-search"></i>
                         </button>
@@ -286,8 +306,8 @@
                     <h1 class="hero-title">Big Sales</h1>
                     <p>Zenna is super clean and professional theme.<br>Suitable for all kind e-commerce website</p>
                     <div class="buttons-holder">
-                      <a href="#" class="btn btn-lg btn-dark"><span>Acheter </span></a>
-                      <a href="{{url('/vente')}}" class="btn btn-lg btn-dark"><span>Vendre</span></a>
+                      <a href="{{url('achat')}}" class="btn btn-lg btn-dark"><span>Acheter </span></a>
+                      <a href="{{url('VenteForm')}}" class="btn btn-lg btn-dark"><span>Vendre</span></a>
                     </div>
                   </div>                  
                 </div>
@@ -573,17 +593,22 @@
           </div>
         </div>       
       </section>
+      <section style="padding: 3%">
+        <div class="container">
+<center>
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3323.44215293322!2d-7.532431684948083!3d33.59383048073321!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xda7cc993c0b280d%3A0x1e0fc88dd347653d!2sFacult%C3%A9%20des%20sciences%20juridiques%2C%20%C3%A9conomiques%20et%20sociales%20d&#39;Ain%20Seb%C3%A2a!5e0!3m2!1sfr!2sma!4v1637887949937!5m2!1sfr!2sma" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
 
+</center>
+        </div>
       <!-- Footer Type-1 -->
       <footer class="footer footer-type-1">
         <div class="container">
           <div class="footer-widgets">
             <div class="row">
 
-              <div class="col-md-3 col-sm-12 col-xs-12">
+              <div class="col-md-2 col-sm-12 col-xs-12">
                 <div class="widget footer-about-us">
                   <img src="img/ANM.png" alt="" class="logo">
-                  <p class="mb-30">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Necessitatibus, inventore?</p>
                   <div class="footer-socials">
                   
                   </div>
@@ -601,12 +626,11 @@
 
               <div class="col-md-2 col-sm-6 col-xs-12">
                 <div class="widget footer-links">
-                  <h5 class="widget-title bottom-line left-align grey">lorem</h5>
+                  <h5 class="widget-title bottom-line left-align grey">Pages</h5>
                   <ul class="list-no-dividers">                  
-                    <li><a href="#">Lorem</a></li>
-                    <li><a href="#">Lorem</a></li>
-                    <li><a href="#">Lorem</a></li>
-                    <li><a href="#">Lorem</a></li>
+                    <li><a href="#">Acheter</a></li>
+                    <li><a href="#">Vendre</a></li>
+                 
                  
                   </ul>
                 </div>

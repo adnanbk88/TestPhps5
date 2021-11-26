@@ -488,7 +488,7 @@ flex-direction: column;
   <div class="input-box">
    <b><span class="details"><b> ETAT </b></span></b> 
   <select name="Etat" id="">
-  <option value="{{ $produit->Etat }}>..</option>
+  <option value="{{ $produit->Etat }}> ..</option>
   <option value="NEUF">NEUF</option>
   <option value="COMME NEUF">COMME NEUF</option>
   <option value="BON">BON</option>

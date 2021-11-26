@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\ClientV;
 use App\Models\Produit;
+use App\Models\Commande;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -13,8 +14,14 @@ class AdminController extends Controller
     }
     public function home()
     {
-      
-        return view('admin.home');
+        $commandes = Commande::all();
+        $produits = Produit::all();
+        $clientsV = ClientV::all();
+
+        $N_com = $commandes->count();
+        $N_produit = $produits->count();
+        $N_clientV = $clientsV->count();
+        return view('admin.home',compact('commandes','N_com','N_produit','produits','clientsV','N_clientV'));
     }
     public function ajouter()
     {
@@ -67,5 +74,6 @@ class AdminController extends Controller
             $produits->delete();
             return redirect()->back();
         }
+     
     }
 

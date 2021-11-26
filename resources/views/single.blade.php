@@ -86,7 +86,7 @@
                 <div class="logo-container">
                     <div class="logo-wrap">
                       <a href="{{url('index')}}">
-                        <img class="logo-dark" src="{{asset('img/ANM.png')}}" alt="logo">
+                        <img class="logo-dark" style="margin-left: 400%" src="{{asset('img/ANM.png')}}" alt="logo">
                       </a>
                     </div>
                   </div>
@@ -111,7 +111,7 @@
               <div class="nav-wrap flex-child">
                 <div class="collapse navbar-collapse text-center" id="navbar-collapse">
                   
-                  <ul class="nav navbar-nav">
+                  {{-- <ul class="nav navbar-nav">
 
                     <li class="dropdown">
                       <a href="#">Home</a>
@@ -158,7 +158,8 @@
                             </div> 
                           </div>
                         </li>
-                      </ul>
+                      </ul> 
+                      
                     </li>
 
                     <li class="dropdown">
@@ -182,7 +183,7 @@
                       </form>
                     </li>
 
-                  </ul> <!-- end menu -->
+                  </ul> <!-- end menu -->--}}
                 </div> <!-- end collapse -->
               </div> <!-- end col -->
 
@@ -281,7 +282,7 @@
        
           <!-- Product Description -->
           <div class="product-description">
-            <span>Headphones</span>
+            <span>Model</span>
             <h1>{{$produit->Model}}</h1>
             <p>{{$produit->Description}}</p>
           </div>

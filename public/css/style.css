@@ -1115,7 +1115,7 @@ header .flex-child.flex-right {
 
 .logo,
 .logo-dark {
-  height: 124%;
+  height: 101%;
 }
 
 .navbar-header,
@@ -5740,7 +5740,7 @@ abbr.required {
 /* Footer Type-1
 /*-------------------------------------------------------*/
 .footer-widgets {
-  padding: 80px 0;
+  padding: 35px 0;
 }
 
 .footer-widgets .widget-title {
