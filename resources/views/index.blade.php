@@ -70,7 +70,7 @@
         <div class="messagedefilant">
         <div class="container">
           <div class="top-bar-links flex-parent">
-              <div style="margin-top:43px" data-text="Voici un texte qui doit défiler horizontalement. Il peut etre encore plus long !---"><span>Voici un texte qui doit défiler horizontalement. Il peut etre encore plus long !---</span></div>
+              <div style="margin-top:43px;color:#fafafa" data-text="Anm est de loin la meilleure plateforme e-commerce d'iphone du marché, testes la maintenant ! "><span>Anm est de loin la meilleure plateforme e-commerce d'iphone du marché, testes la maintenant ! </span></div>
             </div>
              
            
@@ -142,7 +142,7 @@
                 <!-- Logo -->
                 <div class="logo-container">
                   <div class="logo-wrap">
-                    <a href="index.html">
+                    <a href="/">
                       <img class="logo-dark" src="img/ANM.png" alt="logo">
                     </a>
                   </div>
@@ -190,7 +190,7 @@
 
 
                     <li class="dropdown">
-                      <a href="#">Notre collection</a>
+                      <a href="#featured">Notre collection</a>
                       <i class="fa fa-angle-down dropdown-trigger"></i>
                      
                     </li> <!-- end elements -->
@@ -302,9 +302,9 @@
               <div class="hero-holder">
                 <div class="hero-message style-2 dark">
                   <div class="hero-text-holder">
-                   <b><h2 class="hero-subtitle">GET NOW 50% OFF</h2></b> 
+                   <b><h2 class="hero-subtitle">A PARTIR DE -50% </h2></b> 
                     <h1 class="hero-title">Big Sales</h1>
-                    <p>Zenna is super clean and professional theme.<br>Suitable for all kind e-commerce website</p>
+                    <p>Anm est de loin la meilleure plateforme e-commerce d'iphone du marché , testes la maintenant !<br></p>
                     <div class="buttons-holder">
                       <a href="{{url('achat')}}" class="btn btn-lg btn-dark"><span>Acheter </span></a>
                       <a href="{{url('VenteForm')}}" class="btn btn-lg btn-dark"><span>Vendre</span></a>
@@ -332,7 +332,7 @@
     
       <ul class="nav nav-tabs">                                
         <li style="margin-top: 22px;" class="active">
-          <a href="#featured" data-toggle="tab">New Collections</a>
+          <a href="#featured" data-toggle="tab">Notre Collections</a>
         </li>                                
        
     
@@ -386,7 +386,7 @@
             
               <ul class="nav nav-tabs">                                
                 <li class="active">
-                  <a href="#featured" data-toggle="tab">Featured</a>
+                  <a href="#" data-toggle="tab">Collection</a>
                 </li>                                
                                               
               </ul>
@@ -407,7 +407,7 @@
               <div class="product">
                 <div class="product-item hover-trigger">
                   <div class="product-img">
-                    <a href="shop-single.html">
+                    <a href="{{url('/single/'.$produit->id)}}">
                       <img src="{{asset('/storage/uploads/'.$produit->Image)}}" alt="">
                     </a>
                   
@@ -474,7 +474,7 @@
              
                <ul class="nav nav-tabs">                                
                  <li style="margin-top: 22px;" class="active">
-                   <a href="#featured" data-toggle="tab">US </a>
+                   <a href="#featured" data-toggle="tab">NOUS </a>
                  </li>                                
                 
              
@@ -524,60 +524,127 @@
 
 
       <!-- Partners -->
-      <section class="section-wrap partners bg-dark">
-        <div class="container">
-          <div class="row">
-
-            <div id="owl-partners" class="owl-carousel owl-theme">
-
-              <div class="item">
-                <a href="#">
-                  <img src="img/partners/partner_logo_1.png" alt="">
-                </a>
-              </div>
-              <div class="item">
-                <a href="#">
-                  <img src="img/partners/partner_logo_2.png" alt="">
-                </a>
-              </div>
-              <div class="item">
-                <a href="#">
-                  <img src="img/partners/partner_logo_3.png" alt="">
-                </a>
-              </div>
-              <div class="item">
-                <a href="#">
-                  <img src="img/partners/partner_logo_4.png" alt="">
-                </a>
-              </div>
-              <div class="item">
-                <a href="#">
-                  <img src="img/partners/partner_logo_5.png" alt="">
-                </a>
-              </div>
-              <div class="item">
-                <a href="#">
-                  <img src="img/partners/partner_logo_6.png" alt="">
-                </a>
-              </div>
-              <div class="item">
-                <a href="#">
-                  <img src="img/partners/partner_logo_1.png" alt="">
-                </a>
-              </div>
-              <div class="item">
-                <a href="#">
-                  <img src="img/partners/partner_logo_2.png" alt="">
-                </a>
-              </div>
-
-            </div> <!-- end carousel -->
-            
-          </div>
+   <section>
+     <div class="container">
+      <div class="text-center">
+        <div class="tabs product-tabs">
+        
+          <ul class="nav nav-tabs">                                
+            <li style="margin-top: 22px;" class="active">
+              <a href="#featured" data-toggle="tab">Abonnez vous !   </a>
+            </li>                                
+           
+        
         </div>
-      </section> <!-- end partners -->
+      </div>
+      <ul id="services">
+        <li>
+           <div class="facebook">
+              <a href="#">
+              <i style="color: white" class="fab fa-facebook" aria-hidden="true"></i>
+              </a>
+           </div>
+        </li>
+        <li>
+           <div class="twitter">
+              <a href="">
+                 <a href="#">
+                    <i style="color: white" class="fab fa-twitter" aria-hidden="true"></i>
+              </a>
+           </div>
+        </li>
+        <li>
+           <div class="youtube">
+              <a href="#">
+                 <i style="color: white" class="fab fa-youtube" aria-hidden="true"></i>
+              </a>
+           </div>
+        </li>
+        <li>
+           <div class="linkedin">
+              <a href="">
+                 <a href="#">
+                    <i style="color: white"class="fab fa-linkedin" aria-hidden="true"></i>
+              </a>
+           </div>
+        </li>
+        <li>
+           <div class="instagram">
+              <a href="#">
+                 <a href="#">
+                    <i style="color: white" class="fab fa-instagram" aria-hidden="true"></i>
+              </a>
+           </div>
+        </li>
+     </ul>
+     </div>
+   </section>
+
+            
 
 
+<style>
+    
+    section #services {
+    text-align: center;
+    transform: translatez(0);
+    background: #000;
+    border-radius: 10px;
+    margin-bottom: 6%;
+
+  }
+  section #services h2 {
+    margin: 80px 0px 40px;
+    color: #fff;
+    font-size: 2.4em;
+    text-transform: uppercase;
+    text-align: center;
+  }
+  section #services li {
+    width: 120px;
+    height: 140px;
+    display: inline-block;
+    margin: 20px;
+    list-style: none;
+  }
+  section #services li div {
+    width: 120px;
+    height: 120px;
+    font-size: 3.4em;
+    text-align: center;
+    line-height: 120px;
+    transition: all 0.5s ease;
+  }
+
+  section #services li div:hover {
+    transform: rotate(360deg);
+    border-radius: 100px;
+  }
+  section #services li span {
+    width: 120px;
+    height: 20px;
+    display: block;
+    padding: 15px 0px;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 1.2em;
+    text-align: center;
+  }
+  .credits a {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    font-size: 24px;
+    margin-top: 50px;
+    background: white;
+    padding: 20px;
+    max-width: 300px;
+  }
+  :root {
+    --input-padding-x: 1.5rem;
+    --input-padding-y: 0.75rem;
+  }
+</style>
       <!-- Newsletter -->
       <section class="newsletter" id="subscribe">
         <div class="container">

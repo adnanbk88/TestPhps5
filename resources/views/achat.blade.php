@@ -32,7 +32,7 @@
   <!-- CSS only -->
 
   <!-- Favicons -->
-  <link rel="shortcut icon" href="img/favicon.ico">
+  <link rel="shortcut icon" href="img/ANM.png">
   <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
   <link rel="apple-touch-icon" sizes="72x72" href="img/apple-touch-icon-72x72.png">
   <link rel="apple-touch-icon" sizes="114x114" href="img/apple-touch-icon-114x114.png">
@@ -88,7 +88,7 @@
                 <!-- Logo -->
                 <div class="logo-container">
                   <div class="logo-wrap">
-                    <a href="index.html">
+                    <a href="/">
                       <img class="logo-dark" src="img/ANM.png" alt="logo">
                     </a>
                   </div>
@@ -196,7 +196,7 @@
                     <div class="nav-cart-outer">
                       <div class="nav-cart-inner">
                         <a href="#" class="nav-cart-icon">
-                          0
+                          
                         </a>
                       </div>
                     </div>
@@ -220,10 +220,7 @@
 
                    
 
-                      <div class="nav-cart-actions mt-20">
-                        <a href="shop-cart.html" class="btn btn-md btn-dark"><span>View Cart</span></a>
-                        <a href="shop-checkout.html" class="btn btn-md btn-color mt-10"><span>Proceed to Checkout</span></a>
-                      </div>
+                      
                     </div>
                   </li>
                 </ul>
@@ -313,7 +310,7 @@
             
               <ul class="nav nav-tabs">                                
                 <li class="active">
-                  <a href="#featured" data-toggle="tab">Featured</a>
+                  <a href="#featured" data-toggle="tab">Collections</a>
                 </li>                                
                                               
               </ul>
@@ -334,7 +331,7 @@
               <div class="product">
                 <div class="product-item hover-trigger">
                   <div class="product-img">
-                    <a href="shop-single.html">
+                    <a href="{{url('/single/'.$produit->id)}}">
                       <img src="{{asset('/storage/uploads/'.$produit->Image)}}" alt="">
                     </a>
                   

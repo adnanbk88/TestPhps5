@@ -17,6 +17,7 @@ use App\Http\Controller\MailController;
 
 Route::get('/', [App\Http\Controllers\IndexController::class, 'index']);
 Route::get('/single/{id}', [App\Http\Controllers\IndexController::class, 'single']);
+Route::post('/single', [App\Http\Controllers\IndexController::class, 'store']);
 Route::get('/VenteForm', [App\Http\Controllers\VenteController::class, 'VenteForm']);
 Route::post('/VenteForm', [App\Http\Controllers\VenteController::class, 'store']);
 Route::get('/admin/{id}/edite', [App\Http\Controllers\IndexController::class, 'edite']);
@@ -27,6 +28,7 @@ Route::Post('/admin/ajouter', [App\Http\Controllers\AdminController::class, 'sto
 Route::get('/admin/ProduitClient', [App\Http\Controllers\AdminController::class, 'ProduitClient']);
 Route::get('/admin/Produit', [App\Http\Controllers\AdminController::class, 'Produit']);
 Route::get('/admin/home', [App\Http\Controllers\AdminController::class, 'home']);
+Route::get('/admin/commande', [App\Http\Controllers\AdminController::class, 'commande']);
 Route::delete('/admin/{id}', [App\Http\Controllers\AdminController::class, 'delete']);
 
 

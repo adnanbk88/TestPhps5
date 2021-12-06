@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Produit;
+use App\Models\Commande;
 use Illuminate\Http\Request;
 
 class IndexController extends Controller
@@ -54,5 +55,33 @@ class IndexController extends Controller
         return redirect('/admin/Produit');
     }
 
+
+    public function store(Request $request)
+    {
+        $request->validate([
+            "prenomclient" => "required",
+            "nomclient" => "required",
+            "emailclient" => "required",
+            "telephoneclient" => "required",
+            "villeclient" => "required",
+            "adresseclient" => "required",
+            
+          
+            
+        ]);
+        $commande = new Commande();
+        $commande->prenomclient = $request->prenomclient;
+        $commande->nomclient = $request->nomclient;
+        $commande->emailclient = $request->emailclient;
+        $commande->telephoneclient = $request->telephoneclient;
+        $commande->villeclient = $request->villeclient;
+        $commande->adresseclient = $request->adresseclient;
+        $commande->produit_id = $request->produit_id;
+     
+      
+       
+        $commande->save();
+        return redirect('/index');
+    }
     
 }

@@ -78,8 +78,8 @@
                 <!-- Logo -->
                 <div class="logo-container">
                   <div class="logo-wrap">
-                    <a href="index.html">
-                      <img class="logo-dark" style="margin-left: 450%" src="{{asset('img/ANM.png')}}" alt="logo">
+                    <a href="">
+                      <img class="logo-dark" style="margin-left: 460%" src="{{asset('img/ANM.png')}}" alt="logo">
                     </a>
                   </div>
                 </div>
@@ -120,7 +120,7 @@
              
                <ul class="nav nav-tabs">                                
                  <li style="margin-top: 22px;" class="active">
-                   <a href="#featured" data-toggle="tab">TABLEAU DES PRODUITS (PROPOSE PAR LE CLIENTS) </a>
+                   <a href="#featured" data-toggle="tab">TABLEAU DES COMMANDES :</a>
                  </li>                                
                 
              
@@ -131,37 +131,35 @@
             <table class="table table-striped"> 
                 <thead> 
                 <tr>
-                     <th scope="col">ID</th>
                      <th scope="col">NOM</th>
                      <th scope="col">PRENOM</th>
                      <th scope="col">EMAIL</th>
                      <th scope="col">TELEPHONE</th>
                      <th scope="col">VILLE</th>
                      <th scope="col">ADRESSE</th>
-                     <th scope="col">CODE POSTALE</th>
-                     <th scope="col">IMAGE</th>
-                     <th scope="col">MODEL</th>
-                     <th scope="col">ETAT</th>
-                     <th scope="col">TAILLE</th>
+                     <th scope="col">Model</th>
+                     <th scope="col">Taille</th>
+                     <th scope="col">Etat</th>
+                     <th scope="col">DATE</th>
+                  
                 </tr>
                 </thead> 
                 <tbody>
-                  @foreach ($clients as $clientv)
+                  @foreach ($commande as $commande)
  
                     <tr> 
                     
-                      <th scope="row">{{$clientv->id}}</th>
-                      <th scope="row">{{$clientv->nom}}</th>
-                      <th scope="row">{{$clientv->prenom}}</th>
-                      <th scope="row">{{$clientv->email}}</th>
-                      <th scope="row">{{$clientv->telephone}}</th>
-                      <th scope="row">{{$clientv->ville}}</th>
-                      <th scope="row">{{$clientv->adresse}}</th>
-                      <th scope="row">{{$clientv->code_postale}}</th>
-                      <th scope="row"><img  width="100px"  src="{{asset('/storage/uploads/'.$clientv->image)}}" /></th>
-                        <th scope="row">{{$clientv->Model}}</th>
-                        <th scope="row">{{$clientv->Etat}}</th>
-                        <th scope="row">{{$clientv->Taille}}</th>
+                      <th scope="row">{{$commande->nomclient}}</th>
+                      <th scope="row">{{$commande->prenomclient}}</th>
+                      <th scope="row">{{$commande->emailclient}}</th>
+                      <th scope="row">{{$commande->telephoneclient}}</th>
+                      <th scope="row">{{$commande->villeclient}}</th>
+                      <th scope="row">{{$commande->adresseclient}}</th>
+                      <th scope="row">{{$commande->produit->Model}}</th>
+                      <th scope="row">{{$commande->produit->Taille}}</th>
+                      <th scope="row">{{$commande->produit->Etat}}</th>
+                      <th scope="row">{{$commande->created_at}}</th>
+                  
                         
                           @endforeach
                           

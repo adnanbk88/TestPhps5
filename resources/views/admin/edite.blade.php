@@ -304,7 +304,7 @@
              
                <ul class="nav nav-tabs">                                
                  <li style="margin-top: 22px;" class="active">
-                   <a href="#featured" data-toggle="tab">AJOUTER UN NOUVEAU TELEPHONE </a>
+                   <a href="#featured" data-toggle="tab">MODIFIER LE TELEPHONE  </a>
                  </li>                                
                 
              
@@ -458,7 +458,8 @@ flex-direction: column;
         <div class="input-box">
       <b>  <span class="details"> <b>MODEL</b> </span></b>   
   <select name="Model"id="">
-    <option value="{{ $produit->Model }} >..</option>
+    <option> {{ $produit->Model }}</option>
+    <hr>
     <option value="IPHONE 13">IPHONE 13</option>
     <option value="IPHONE 12">IPHONE 12</option>
     <option value="IPHONE 12 PRO MAX">IPHONE 12 PRO MAX</option>
@@ -479,7 +480,7 @@ flex-direction: column;
   <div class="input-box">
     <b><span class="details"> <b>TAILLE</b> </span> </b>
   <select name="Taille"  id="">
-  <option value="{{ $produit->Taille }}>..</option>
+  <option>{{$produit->Taille}}</option>
   <option value="64">64</option>
   <option value="128">128</option>
   <option value="256">256</option>
@@ -488,7 +489,7 @@ flex-direction: column;
   <div class="input-box">
    <b><span class="details"><b> ETAT </b></span></b> 
   <select name="Etat" id="">
-  <option value="{{ $produit->Etat }}> ..</option>
+  <option>{{$produit->Etat}}</option>
   <option value="NEUF">NEUF</option>
   <option value="COMME NEUF">COMME NEUF</option>
   <option value="BON">BON</option>
@@ -515,11 +516,13 @@ flex-direction: column;
     </div>
    
     <div class="button">
-      <input type="submit" value="Envoyer">
+      <input type="submit" value="Modifier">
     </div>
   </form>
 </div>
 </div>
+
+
 
 
 

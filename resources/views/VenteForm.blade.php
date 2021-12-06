@@ -33,7 +33,7 @@
   <!-- CSS only -->
 
   <!-- Favicons -->
-  <link rel="shortcut icon" href="img/favicon.ico">
+  <link rel="shortcut icon" href="img/ANM.png">
   <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
   <link rel="apple-touch-icon" sizes="72x72" href="img/apple-touch-icon-72x72.png">
   <link rel="apple-touch-icon" sizes="114x114" href="img/apple-touch-icon-114x114.png">
@@ -71,35 +71,9 @@
       <div class="top-bar hidden-xs">
         <div class="container">
           <div class="top-bar-links flex-parent">
-            <ul class="top-bar-currency-language">
-              <li>
-                Currency: <a href="#">USD<i class="fa fa-angle-down"></i></a>
-                <div class="currency-dropdown">
-                  <ul>
-                    <li><a href="#">USD</a></li>
-                    <li><a href="#">EUR</a></li>
-                  </ul>
-                </div>
-              </li>
-              <li class="language">
-                Language: <a href="#">ENG<i class="fa fa-angle-down"></i></a>
-                <div class="language-dropdown">
-                  <ul>
-                    <li><a href="#">English</a></li>
-                    <li><a href="#">Spanish</a></li>
-                    <li><a href="#">German</a></li>
-                    <li><a href="#">Chinese</a></li>
-                  </ul>
-                </div>
-              </li>
-            </ul>
+         
 
-            <ul class="top-bar-acc">
-              <li class="top-bar-link"><a href="#">My Wishlist</a></li>
-              <li class="top-bar-link"><a href="#">Newsletter</a></li>
-              <li class="top-bar-link"><a href="#">Login</a></li>                 
-            </ul>
-
+           
           </div>
         </div>
       </div> <!-- end top bar -->
@@ -114,7 +88,7 @@
                 <!-- Logo -->
                 <div class="logo-container">
                   <div class="logo-wrap">
-                    <a href="index.html">
+                    <a href="/">
                       <img class="logo-dark" src="img/ANM.png" alt="logo">
                     </a>
                   </div>
@@ -227,7 +201,7 @@
                     <div class="nav-cart-outer">
                       <div class="nav-cart-inner">
                         <a href="#" class="nav-cart-icon">
-                          0
+                          
                         </a>
                       </div>
                     </div>
@@ -237,12 +211,10 @@
                         <div class="nav-cart-item clearfix">
                           <div class="nav-cart-img">
                             <a href="#">
-                              <img src="img/shop/shop_item_1.jpg" alt="">
                             </a>
                           </div>
                         
                           <div class="nav-cart-remove">
-                            <a href="#" class="remove"><i class="ui-close"></i></a>
                           </div>
                         </div>
 
@@ -251,10 +223,6 @@
 
                    
 
-                      <div class="nav-cart-actions mt-20">
-                        <a href="shop-cart.html" class="btn btn-md btn-dark"><span>View Cart</span></a>
-                        <a href="shop-checkout.html" class="btn btn-md btn-color mt-10"><span>Proceed to Checkout</span></a>
-                      </div>
                     </div>
                   </li>
                 </ul>
@@ -476,35 +444,35 @@ form .user-details .input-box{
         <div class="user-details">
           <div class="input-box">
             <span class="details">Prenom</span>
-            <input type="text" name="prenom" placeholder="Enter your name" required>
+            <input type="text" name="prenom" placeholder="Prenom" required>
           </div>
           <div class="input-box">
             <span class="details">Nom</span>
-            <input type="text" name="nom" placeholder="Enter your username" required>
+            <input type="text" name="nom" placeholder=" Nom" required>
           </div>
           <div class="input-box">
             <span class="details">Email</span>
-            <input type="text" name="email" placeholder="Enter your email" required>
+            <input type="text" name="email" placeholder=" email" required>
           </div>
           <div class="input-box">
             <span class="details">Numero de telephone</span>
-            <input type="text" name="telephone" placeholder="Enter your number" required>
+            <input type="text" name="telephone" placeholder="téléphone" required>
           </div>
           <div class="input-box">
             <span class="details">Ville</span>
-            <input type="text" name="ville" placeholder="Enter your password" required>
+            <input type="text" name="ville" placeholder="Villle" required>
           </div>
           <div class="input-box">
             <span class="details">Adresse</span>
-            <input type="text" name="adresse" placeholder="Enter your password" required>
+            <input type="text" name="adresse" placeholder="Adresse" required>
           </div>
           <div class="input-box">
             <span class="details">Code postal</span>
-            <input type="text" name="code_postale"  placeholder="Enter your password" required>
+            <input type="text" name="code_postale"  placeholder=" CODE POSTAL" required>
           </div>
           <div class="input-box">
             <span class="details">Images</span>
-            <input type="file" name="image"  placeholder="Enter your password" required>
+            <input type="file" name="image"   required>
           </div>
           
           
@@ -567,7 +535,7 @@ form .user-details .input-box{
           </div>
         </div>
         <div class="button">
-          <input type="submit" value="Envoyer">
+          <input type="submit" class="vente" value="Envoyer">
         </div>
       </form>
     </div>
@@ -667,6 +635,26 @@ form .user-details .input-box{
   <script type="text/javascript" src="js/bootstrap.min.js"></script>
   <script type="text/javascript" src="js/plugins.js"></script>  
   <script type="text/javascript" src="js/scripts.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script>
+     
+    $( ".vente" ).click(function(e) {
+      Swal.fire({
+  position: 'top-end',
+  icon: 'success',
+  title: 'VOTRE DE DEMANDE VENTE A ETE PASSE AVEC SUCCES',
+  showConfirmButton: false,
+  timer: 2000
+}).then((result) => {
+      /* Read more about isConfirmed, isDenied below */
+      if (result.isConfirmed) {
+        $(e.target).parent("form").submit();
+      } 
+      else
+      console.log("erreur");
+    })
+    });
+    </script>
     
 </body>
 </html>

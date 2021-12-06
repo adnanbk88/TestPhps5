@@ -19,6 +19,7 @@ class AdminController extends Controller
         $clientsV = ClientV::all();
 
         $N_com = $commandes->count();
+        $N_comd = $commandes->count();
         $N_produit = $produits->count();
         $N_clientV = $clientsV->count();
         return view('admin.home',compact('commandes','N_com','N_produit','produits','clientsV','N_clientV'));
@@ -32,6 +33,13 @@ class AdminController extends Controller
     {
       $clients = ClientV::all();
         return view('admin.ProduitClient' ,compact('clients'));
+    }
+    public function commande()
+    {
+      
+      $commande = Commande::all();
+      
+        return view('admin.commande' ,compact('commande'));
     }
     public function Produit()
     {

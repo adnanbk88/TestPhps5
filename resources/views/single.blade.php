@@ -85,8 +85,8 @@
                 <!-- Logo -->
                 <div class="logo-container">
                     <div class="logo-wrap">
-                      <a href="{{url('index')}}">
-                        <img class="logo-dark" style="margin-left: 400%" src="{{asset('img/ANM.png')}}" alt="logo">
+                      <a href="{{url('/')}}">
+                        <img class="logo-dark" style="" src="{{asset('img/ANM.png')}}" alt="logo">
                       </a>
                     </div>
                   </div>
@@ -308,10 +308,9 @@
        
           <!-- Product Pricing -->
           <div class="product-price">
-            <span>{{$produit->Prix}}$</span>
+            <span>{{$produit->Prix}}MAD </span>
 
             <button type="button" class="btn btn-primary cart-btn" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Acheter</button>
-
             <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                   <div class="modal-content">
@@ -322,35 +321,41 @@
                       </button>
                     </div>
                     <div class="modal-body">
-                      <form>
-                        <div class="form-group">
+                      <form action="{{url('/single')}}" method="POST" enctype="multipart/form-data">
+                        @csrf                              <div class="form-group">
                           <label for="recipient-name" class="col-form-label">Nom de client</label>
-                          <input type="text" class="form-control" id="recipient-name">
+                          <input type="text" class="form-control" name="nomclient" id="recipient-name">
                         </div>
                         <div class="form-group">
                           <label for="recipient-name" class="col-form-label">Prenom de client</label>
-                          <input type="text" class="form-control" id="recipient-name">
+                          <input type="text" class="form-control" name="prenomclient" id="recipient-name">
                         </div>
                         <div class="form-group">
                           <label for="message-text" class="col-form-label">VILLE</label>
-                          <input type="number" class="form-control" id="recipient-name">
+                          <input type="text" class="form-control" name="villeclient" id="recipient-name">
 
                         </div>
                         <div class="form-group">
                           <label for="message-text" class="col-form-label">Email de client</label>
-                          <input type="text" class="form-control" id="recipient-name">
+                          <input type="text" class="form-control" name="emailclient" id="recipient-name">
                         </div>
                         <div class="form-group">
                             <label for="message-text" class="col-form-label">Telephone de client</label>
-                            <input type="number" class="form-control" id="recipient-name">
+                            <input type="number" class="form-control" name="telephoneclient" id="recipient-name">
+                            <input type="hidden"   name="produit_id" value="{{$produit->id}}">
+
+                        </div>
+                        <div class="form-group">
+                            <label for="message-text" class="col-form-label">Adresse de client</label>
+                            <input type="text" class="form-control" name="adresseclient" id="recipient-name">
                             
                         </div>
-                      </form>
+                       <div class="modal-footer">
+                      <button type="submit" class="btn btn-primary">Passer la commande</button>
                     </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Retour</button>
-                      <button type="button" class="btn btn-primary">Passer la commande</button>
+                   </form>
                     </div>
+                  
                   </div>
                 </div>
               </div>
