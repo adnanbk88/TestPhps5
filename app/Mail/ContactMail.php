@@ -7,11 +7,10 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class TestMail extends Mailable
+class ContactMail extends Mailable
 {
     use Queueable, SerializesModels;
     public $details;
-    
     /**
      * Create a new message instance.
      *
@@ -19,17 +18,20 @@ class TestMail extends Mailable
      */
     public function __construct($details)
     {
-        
-        $this->details = $details;
+        $this->details=$details;
     }
 
-
-/*     * Build the message.
+    /**
+     * Build the message.
      *
      * @return $this
      */
     public function build()
     {
-        return $this->subject('test mail form surfside Media')->view('emails.TestMail');
+        return $this->subject('Contact Message')->view('contactMail');
+    }
+    public function produit()
+    {
+        return $this->belongsTo(Produit::class);
     }
 }

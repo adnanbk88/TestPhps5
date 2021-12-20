@@ -9,7 +9,13 @@ class AchatController extends Controller
 {
     public function achat()
     {
+        
         $produits=Produit::all();
         return view('achat',compact('produits'));
+    }
+    public function pdf()
+    {
+        
+        return view('pdf');
     }
 }

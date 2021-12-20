@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use Mail;
 use App\Models\Produit;
 use App\Models\Commande;
+use App\Mail\ContactMail;
+use Barryvdh\DomPDF\Facade as PDF;
 use Illuminate\Http\Request;
 
 class IndexController extends Controller
@@ -12,6 +15,19 @@ class IndexController extends Controller
     {
         $produits=Produit::all();
         return view('index',compact('produits'));
+    }
+    public function merci()
+    {
+
+        $commande = session("commande");
+        return view('merci',compact("commande"));
+    }
+    public function telechargerFacture(Request $request)
+    {
+
+        $commande = Commande::find($request->id);
+        $pdf = PDF::loadView('facture',compact(('commande')));
+        return $pdf->download('facture.pdf');
     }
     public function single($id)
     {
@@ -31,26 +47,29 @@ class IndexController extends Controller
             "Taille" => "required",
             "Prix" => "required",
             "description" => "required",               
-            "Image" => "required",               
             
         ]);
-        $produits = new Produit();
+        $produits = Produit::find($id);
         
         $produits->Model = $request->Model;
         $produits->Taille = $request->Taille;
         $produits->Etat = $request->Etat;
         $produits->description = $request->description;
         $produits->Prix = $request->Prix;
-        if ($request->hasFile('Image')) {
-            //Get Just Ext
-            $extention = $request->file('Image')->getClientOriginalExtension();
-            //FileName To Store
-            $fileNameToStore = "item_" . time() . '.' . $extention;
-            //Upload Image
-            $path = $request->file('Image')->storeAs('public/uploads', $fileNameToStore);
-            $produits->image = $fileNameToStore;
+        if($request->Image){
+
+            if ($request->hasFile('Image')) {
+                //Get Just Ext
+                $extention = $request->file('Image')->getClientOriginalExtension();
+                //FileName To Store
+                $fileNameToStore = "item_" . time() . '.' . $extention;
+                //Upload Image
+                $path = $request->file('Image')->storeAs('public/uploads', $fileNameToStore);
+                $produits->image = $fileNameToStore;
+            }
         }
-       
+
+        
         $produits->save();
         return redirect('/admin/Produit');
     }
@@ -58,6 +77,8 @@ class IndexController extends Controller
 
     public function store(Request $request)
     {
+       
+ 
         $request->validate([
             "prenomclient" => "required",
             "nomclient" => "required",
@@ -81,7 +102,18 @@ class IndexController extends Controller
       
        
         $commande->save();
-        return redirect('/index');
+        $details = [
+            'prenomclient' => $request->prenomclient,
+            'nomclient' => $request->nomclient,
+            'telephoneclient'=> $request->telephoneclient,
+            'villeclient' => $request->villeclient,
+            'adresseclient' => $request->emailclient,
+            'emailclient' => $request->emailclient,
+        ];
+
+     Mail::to(''.$request->emailclient.'')->send(new ContactMail($details));
+     
+        return redirect('/merci')->with("commande",$commande);
     }
     
 }

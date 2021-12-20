@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Zenna | HOME</title>
+  <title>ANM | HOME</title>
 
   <meta charset="utf-8">
   <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
@@ -31,10 +31,7 @@
   <link rel="stylesheet" href="{{asset('css/style.css')}}" />
 
   <!-- Favicons -->
-  <link rel="shortcut icon" href="{{asset('img/favicon.ico')}}">
-  <link rel="apple-touch-icon" href="{{asset('img/apple-touch-icon.png')}}">
-  <link rel="apple-touch-icon" sizes="72x72" href="{{asset('img/apple-touch-icon-72x72.png')}}">
-  <link rel="apple-touch-icon" sizes="114x114" href="{{asset('img/apple-touch-icon-114x114.png')}}">
+  
 
 </head>
 
@@ -321,7 +318,7 @@
                       </button>
                     </div>
                     <div class="modal-body">
-                      <form action="{{url('/single')}}" method="POST" enctype="multipart/form-data">
+                      <form action="{{url('/single')}}" method="POST" id="formA" enctype="multipart/form-data">
                         @csrf                              <div class="form-group">
                           <label for="recipient-name" class="col-form-label">Nom de client</label>
                           <input type="text" class="form-control" name="nomclient" id="recipient-name">
@@ -351,7 +348,7 @@
                             
                         </div>
                        <div class="modal-footer">
-                      <button type="submit" class="btn btn-primary">Passer la commande</button>
+                      <button type="submit" id="achat" class="btn btn-primary">Passer la commande</button>
                     </div>
                    </form>
                     </div>
@@ -367,6 +364,31 @@
   <script type="text/javascript" src="{{asset('js/bootstrap.min.js')}}"></script>
   <script type="text/javascript" src="{{asset('js/plugins.js')}}"></script>  
   <script type="text/javascript" src="{{asset('js/scripts.js')}}"></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+  <script>
+     
+    $( "#achat" ).click(function(e) {
+      e.preventDefault();
+      Swal.fire({
+        confirmButtonText:'Telecharger la facture ',
+        
+      icon: 'success',
+      width: 400,
+      title: 'VOTRE DE DEMANDE VENTE A ETE PASSE AVEC SUCCES',
+ 
+}).then((result) => {
+      /* Read more about isConfirmed, isDenied below */
+     if (result.isConfirmed) {
+      $("#formA").submit();
+      } 
+
+     console.log(123);
+    })
+    
+    });
+    </script>
 </body>
 <style>
     /* Basic Styling */

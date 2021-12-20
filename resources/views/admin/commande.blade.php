@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>ADMIN | AJOUTER UN PRODUIT</title>
+  <title>ADMIN | COMMANDES</title>
 
   <meta charset="utf-8">
   <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
@@ -128,8 +128,10 @@
            </div>
          </section>  
         <section>
+          <div class="container">
+
             <table class="table table-striped"> 
-                <thead> 
+                <thead style="background-color: black; color:#fafafa; border:#000"> 
                 <tr>
                      <th scope="col">NOM</th>
                      <th scope="col">PRENOM</th>
@@ -137,6 +139,7 @@
                      <th scope="col">TELEPHONE</th>
                      <th scope="col">VILLE</th>
                      <th scope="col">ADRESSE</th>
+                     <th scope="col">ID</th>
                      <th scope="col">Model</th>
                      <th scope="col">Taille</th>
                      <th scope="col">Etat</th>
@@ -144,7 +147,7 @@
                   
                 </tr>
                 </thead> 
-                <tbody>
+                <tbody style="border:#000">
                   @foreach ($commande as $commande)
  
                     <tr> 
@@ -155,6 +158,7 @@
                       <th scope="row">{{$commande->telephoneclient}}</th>
                       <th scope="row">{{$commande->villeclient}}</th>
                       <th scope="row">{{$commande->adresseclient}}</th>
+                      <th scope="row">{{$commande->produit->id}}</th>
                       <th scope="row">{{$commande->produit->Model}}</th>
                       <th scope="row">{{$commande->produit->Taille}}</th>
                       <th scope="row">{{$commande->produit->Etat}}</th>
@@ -166,6 +170,7 @@
                      </tr>
                          </tbody> 
                 </table>
+          </div>
         </section>
         <style>
             #btn{

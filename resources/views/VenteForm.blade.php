@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Zenna | VENTE</title>
+  <title>ANM | VENTE</title>
 
   <meta charset="utf-8">
   <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
@@ -640,7 +640,7 @@ form .user-details .input-box{
      
     $( ".vente" ).click(function(e) {
       Swal.fire({
-  position: 'top-end',
+
   icon: 'success',
   title: 'VOTRE DE DEMANDE VENTE A ETE PASSE AVEC SUCCES',
   showConfirmButton: false,

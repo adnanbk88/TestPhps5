@@ -16,8 +16,11 @@ use App\Http\Controller\MailController;
 */
 
 Route::get('/', [App\Http\Controllers\IndexController::class, 'index']);
+Route::get('/merci', [App\Http\Controllers\IndexController::class, 'merci']);
 Route::get('/single/{id}', [App\Http\Controllers\IndexController::class, 'single']);
+
 Route::post('/single', [App\Http\Controllers\IndexController::class, 'store']);
+Route::post('/telechargerFacture', [App\Http\Controllers\IndexController::class, 'telechargerFacture']);
 Route::get('/VenteForm', [App\Http\Controllers\VenteController::class, 'VenteForm']);
 Route::post('/VenteForm', [App\Http\Controllers\VenteController::class, 'store']);
 Route::get('/admin/{id}/edite', [App\Http\Controllers\IndexController::class, 'edite']);
@@ -33,7 +36,6 @@ Route::delete('/admin/{id}', [App\Http\Controllers\AdminController::class, 'dele
 
 
 
-Route::get('/send-email', [App\Http\Controllers\MailController::class, 'sendEmail']);
 
 Auth::routes();
 

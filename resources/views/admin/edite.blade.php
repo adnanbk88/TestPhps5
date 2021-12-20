@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>ADMIN | AJOUTER UN PRODUIT</title>
+  <title>ADMIN | EDITER UN PRODUIT</title>
 
   <meta charset="utf-8">
   <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
@@ -449,7 +449,7 @@ flex-direction: column;
 <div class="title">REMPLIR LE FORMULAIRE</div>
 <div class="content">
     <form action="{{ url('admin/'.$produit->id. '/edite') }}" method="post">
-        <input type="hidden" name="_method" value="PUT">
+       
   
     @csrf
     @method('PUT')  
@@ -501,8 +501,7 @@ flex-direction: column;
      
       <div class="input-box">
         <span class="details">DESCRIPTION</span>
-        <textarea type="text" name="description" placeholder="Enter your username" value="{{ $produit->description }}" required>
-        </textarea>
+        <textarea type="text" name="description" placeholder="..." rows="5" required>{{ $produit->Description }}</textarea>
       </div>
       <div class="input-box">
         <span class="details">PRIX</span>
@@ -510,7 +509,7 @@ flex-direction: column;
       </div>
       <div class="input-box">
         <span class="details">Images</span>
-        <input type="file" name="Image"  required>
+        <input type="file" name="Image" >
       </div>
      
     </div>
